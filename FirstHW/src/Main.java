@@ -8,12 +8,13 @@ public class Main {
 
         System.out.println("Hello World!");
         Counter counter = new Counter();
-        Lock lock = new ReentrantLock();
+        //Lock lock = new ReentrantLock();
+        PetersonLock lock = new PetersonLock();
 
-        MyThread[] threads = new MyThread[10];
+        MyThread[] threads = new MyThread[2];
 
         for (int i = 0; i < threads.length; i++) {
-            threads[i] = new MyThread(counter, lock);
+            threads[i] = new MyThread(counter, lock, i);
         }
 
         for (int i = 0; i < threads.length; i++) {
