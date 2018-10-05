@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Main {
 
@@ -6,10 +8,12 @@ public class Main {
 
         System.out.println("Hello World!");
         Counter counter = new Counter();
+        Lock lock = new ReentrantLock();
+
         MyThread[] threads = new MyThread[10];
 
         for (int i = 0; i < threads.length; i++) {
-            threads[i] = new MyThread(counter);
+            threads[i] = new MyThread(counter, lock);
         }
 
         for (int i = 0; i < threads.length; i++) {
