@@ -1,3 +1,5 @@
+package org.sample.program;
+
 import java.util.Scanner;
 import java.util.concurrent.locks.Lock;
 
@@ -28,4 +30,5 @@ public class Main {
         System.out.println(counter.toString());
 
     }
+
 }

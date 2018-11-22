@@ -1,5 +1,6 @@
+package org.sample.program;
+
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class MyThread extends Thread{
 
@@ -26,7 +27,7 @@ public class MyThread extends Thread{
             lock.unlock();
         }
 
-        System.out.println("Finished - " + Thread.currentThread().getId());
+        //System.out.println("Finished - " + Thread.currentThread().getId());
     }
 
 }
