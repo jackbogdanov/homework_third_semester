@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en" class="">
+ <head>
+  <script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+</script>
+  <meta charset="utf-8">
+  <meta name="xsrf_token" content="I3kd9ln7C2CzLt3D9he6CvKptCNpg3dMNDKXjxONLnU6MTU0NDE5NTg2ODAzOTgzNw">
+  <link rel="canonical" href="https://cloud.google.com/appengine/docs/java/">
+  <link rel="alternate" href="https://cloud.google.com/appengine/docs/java/" hreflang="en">
+  <link rel="alternate" href="https://cloud.google.com/appengine/docs/java/" hreflang="x-default">
+  <link rel="shortcut icon" href="https://cloud.google.com/_static/954bdbf227/images/cloud/icons/favicons/onecloud/favicon.ico">
+  <link rel="apple-touch-icon" href="https://cloud.google.com/_static/954bdbf227/images/cloud/icons/favicons/onecloud/apple-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://cloud.google.com/_static/954bdbf227/css/devsite-cloud-white.css">
+  <link rel="stylesheet" href="https://cloud.google.com/_static/954bdbf227/css/cloud/cloud-site.css">
+  <link rel="search" type="application/opensearchdescription+xml" title="Google Cloud" href="https://cloud.google.com/s/opensearch.xml">
+  <script src="https://cloud.google.com/_static/954bdbf227/js/jquery-bundle.js"></script>
+  <meta property="og:site_name" content="Google Cloud">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cloud.google.com/appengine/docs/java/">
+  <meta property="og:locale" content="en">
+  <script>
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  <title>Java on Google App Engine &nbsp;|&nbsp; App Engine Documentation
+      &nbsp;|&nbsp; Google Cloud</title>
+  <meta property="og:title" content="Java on Google App Engine &nbsp;|&nbsp; App Engine Documentation
+      &nbsp;|&nbsp; Google Cloud">
+  <link rel="stylesheet" href="https://cloud.google.com/appengine/docs/landing-page.css">
+ </head>
+ <body class="
+               devsite-doc-page
+               
+               
+               
+               
+               devsite-header-no-lower-tabs" data-family="endorsed" id="top_of_page">
+  <div class="devsite-wrapper">
+   <div class="devsite-top-section-wrapper
+            ">
+    <header class="devsite-top-section nocontent">
+     <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+       <div class="devsite-top-logo-row devsite-full-site-width">
+        <button type="button" class="devsite-expand-section-nav devsite-header-icon-button
+                                       button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Hamburger menu"></button>
+        <div class="devsite-product-name-wrapper">
+         <a href="https://cloud.google.com/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="googlecloud" track-metadata-eventdetail="nav" track-metadata-position="nav"><img src="https://cloud.google.com/_static/954bdbf227/images/cloud/cloud-logo.svg" class="devsite-site-logo" alt="Google Cloud"><span class="devsite-site-name devsite-product-name">Google Cloud</span></a>
+        </div>
+        <div class="devsite-header-upper-tabs">
+         <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+          <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Google Cloud" track-type="globalNav" track-name="googleCloud" track-metadata-position="nav" track-metadata-eventdetail="nav" style="display: none;"> Google Cloud </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/why-google-cloud/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Why Google" track-type="globalNav" track-name="whyGoogle" track-metadata-position="nav" track-metadata-eventdetail="nav"> Why Google </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/products/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Products" track-type="globalNav" track-name="products" track-metadata-position="nav" track-metadata-eventdetail="nav"> Products </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/solutions/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Solutions" track-type="globalNav" track-name="solutions" track-metadata-position="nav" track-metadata-eventdetail="nav"> Solutions </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/pricing/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Pricing" track-type="globalNav" track-name="pricing" track-metadata-position="nav" track-metadata-eventdetail="nav"> Pricing </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/security/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Security" track-type="globalNav" track-name="security" track-metadata-position="nav" track-metadata-eventdetail="nav"> Security </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/docs/" class="devsite-doc-set-nav-active devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" aria-label="Documentation, selected" data-category="Site-Wide Custom Events" data-label="Tab: Documentation" track-type="globalNav" track-name="documentation" track-metadata-position="nav" track-metadata-eventdetail="nav"> Documentation </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/customers/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Customers" track-type="globalNav" track-name="customers" track-metadata-position="nav" track-metadata-eventdetail="nav"> Customers </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/partners/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Partners" track-type="globalNav" track-name="partners" track-metadata-position="nav" track-metadata-eventdetail="nav"> Partners </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/support-hub/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Support" track-type="globalNav" track-name="support" track-metadata-position="nav" track-metadata-eventdetail="nav"> Support </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://cloud.google.com/marketplace/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Marketplace" track-type="globalNav" track-name="marketplace" track-metadata-position="nav" track-metadata-eventdetail="nav"> Marketplace </a></li>
+          </ul>
+         </nav>
+        </div>
+        <form class="devsite-search-form" action="https://cloud.google.com/s/results/" method="GET" id="top-search" search-placeholder="Search">
+         <div id="searchbox" class="devsite-searchbox">
+          <input placeholder="Search" type="text" class="devsite-search-field devsite-search-query" name="q" value="" autocomplete="off" aria-label="Search box">
+          <div class="devsite-search-image material-icons"></div>
+         </div>
+         <input type="hidden" name="p" id="search_project" value="/appengine/docs/" data-project-name="App Engine Documentation" data-project-path="/appengine/docs/" data-query-match="">
+         <input type="hidden" class="suggest-project" value="App Engine Documentation">
+        </form>
+        <a class="devsite-header-link devsite-top-button button gc-analytics-event" href="//console.cloud.google.com/" data-category="Site-Wide Custom Events" data-label="Site header link" track-type="globalNav" track-name="console" track-metadata-position="nav" track-metadata-eventdetail="nav">
+         <div class="devsite-header-link-label">
+          Console
+         </div></a>
+        <button type="button" class="devsite-search-button devsite-header-icon-button button-flat
+                                       material-icons"></button>
+        <a href="https://accounts.google.com/ServiceLogin?passive=true&amp;continue=https%3A%2F%2Fcloud.google.com%2Fappengine%2Fdocs%2Fjava%2F%3Frefresh%3D1&amp;service=cloudconsole" class="devsite-user-signin devsite-top-button button gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Sign in button" track-type="globalNav" track-name="signIn" track-metadata-eventdetail="nav" track-metadata-position="nav"> Sign in </a>
+       </div>
+      </div>
+     </div>
+     <div class="devsite-collapsible-section">
+      <div class="devsite-header-background devsite-full-site-width">
+       <div class="devsite-product-id-row devsite-full-site-width">
+        <div class="devsite-product-description-row">
+         <ul class="devsite-breadcrumb-list">
+          <li class="devsite-breadcrumb-item"> Documentation </li>
+         </ul>
+        </div>
+       </div>
+       <div class="devsite-doc-set-nav-row devsite-full-site-width">
+        <a href="https://cloud.google.com/products/compute/" class="devsite-secondary-branding" track-type="localNav" track-name="computeProducts" track-metadata-eventdetail="nav"> Compute Products </a>
+        <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper"></nav>
+        <div class="devsite-product-button-row
+            cloud-free-trial-eligible">
+         <button type="button" id="devsite-feedback-project" class="devsite-feedback-button devsite-top-button gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Send Feedback Button" track-type="feedback" track-name="sendFeedbackLink" track-metadata-position="header"> Send feedback </button>
+         <a href="https://cloud.google.com/contact/" class="cta-button-secondary button" track-type="contact" track-name="sales" track-metadata-position="nav" track-metadata-eventdetail="nav"> Contact sales </a>
+         <a href="//console.cloud.google.com/freetrial" class="cloud-free-trial-button cta-button-primary button-primary button" track-type="freeTrial" track-name="gcpCta" track-metadata-position="nav" track-metadata-eventdetail="nav"> Try free </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <script>
+    if (window.jQuery) {
+      $(document).ready(function() {
+        if (window.devsite && window.devsite.search) {
+          
+          window.devsite.search.init('en')
+        }
+      });
+    }
+  </script>
+   </div>
+   <div id="gc-wrapper" itemscope itemtype="http://schema.org/Article">
+    <input class="google-tag-manager-id" type="hidden" value="GTM-5CVQBG">
+    <script>
+      var dataLayer = [{"freeTrialEligibleUser": "True", "userCountry": "RU", "language": {"requested": "en", "served": "en"}, "projectName": "App Engine Documentation", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script> 
+    <div class="devsite-site-mask"></div> 
+    <nav class="devsite-nav-responsive devsite-nav nocontent" tabindex="0"> 
+     <div class="devsite-nav-responsive-tabs-panel"> 
+      <nav class="devsite-nav-responsive-tabs devsite-nav"> 
+       <ul class="devsite-nav-list"> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud"> Google Cloud </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/why-google-cloud/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Why Google"> Why Google </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/products/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Products"> Products </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/solutions/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Solutions"> Solutions </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/pricing/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Pricing"> Pricing </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/security/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Security"> Security </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/docs/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Documentation"> Documentation </a> <span class="devsite-nav-responsive-forward devsite-nav-responsive-tab devsite-nav-title
+               devsite-secondary-branding devsite-nav-active gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Compute Products" tabindex="0"> Compute Products </span> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/customers/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Customers"> Customers </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/partners/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Partners"> Partners </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/support-hub/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Support"> Support </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://cloud.google.com/marketplace/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Marketplace"> Marketplace </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="//console.cloud.google.com/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: console"> Console </a> </li> 
+       </ul> 
+      </nav> 
+     </div> 
+     <div class="devsite-nav-responsive-sidebar-panel"> 
+      <div class="devsite-nav-responsive-back" tabindex="0"></div> 
+      <nav class="devsite-nav-responsive-sidebar"> 
+      </nav> 
+     </div> 
+    </nav> 
+    <div class="devsite-main-content clearfix"> 
+     <nav class="devsite-section-nav devsite-nav nocontent"> 
+      <ul class="devsite-nav-list devsite-nav-expandable">
+       <li class="devsite-nav-item devsite-nav-active"><a href="https://cloud.google.com/appengine/docs/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Google App Engine Docs</a></li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable"><span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="0" aria-label="Standard Environment, click to expand/collapse" role="link">Standard Environment</span><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav" track-name="expandNavSectionArrow" track-metadata-position="0" aria-hidden="true"></a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/standard/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">About the Standard Environment</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/standard/appengine-generation" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">The Standard Environment Runtimes</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/python/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Python 2.7, 3.7 (beta)</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/standard/java/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Java 7, 8</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/standard/nodejs/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Node.js 8 (beta), 10 (beta)</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/php/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">PHP 5.5, 7.2 (beta)</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/standard/go/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Go 1.9, 1.11 (beta)</a></li>
+        </ul></li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable"><span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="0" aria-label="Flexible Environment, click to expand/collapse" role="link">Flexible Environment</span><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav" track-name="expandNavSectionArrow" track-metadata-position="0" aria-hidden="true"></a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">About the Flexible Environment</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/python/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Python 2.7, 3.6</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/java/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Java 8</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/nodejs/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Node.js</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/go/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Go 1.9, 1.10, 1.11</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/ruby/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Ruby</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/php/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">PHP 5.6, 7.0, 7.1, 7.2</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/dotnet/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">.NET</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/custom-runtimes/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Custom Runtimes</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/flexible/known-issues" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Known Issues</a></li>
+        </ul></li>
+       <li class="devsite-nav-item devsite-nav-item-heading"><span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="0">Resources</span></li>
+       <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/the-appengine-environments" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Choosing an Environment</a></li>
+       <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/downloads" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Install the SDK for App Engine</a></li>
+       <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/locations" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">App Engine Locations</a></li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable"><span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="0" aria-label="Pricing and Quotas, click to expand/collapse" role="link">Pricing and Quotas</span><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav" track-name="expandNavSectionArrow" track-metadata-position="0" aria-hidden="true"></a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/pricing" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Pricing</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/quotas" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Quotas</a></li>
+        </ul></li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable"><span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="0" aria-label="Articles, click to expand/collapse" role="link">Articles</span><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav" track-name="expandNavSectionArrow" track-metadata-position="0" aria-hidden="true"></a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Overview</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/scalability" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Designing for Scale</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/spring_optimization" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Optimizing Spring Framework</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/using_jpa_tool" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">JPA facets &amp; Cloud SQL</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/indexselection" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Datastore Index Selection &amp; Advanced Search</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/fantasm" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Workflows with Fantasm</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/life_of_write" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Life of a Datastore Write</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/storage_breakdown" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Storing Entities &amp; Indexes</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/handling_datastore_errors" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Handling Datastore Errors</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/deferred" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Deferred Library</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/scaling/contention" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Avoiding Datastore Contention</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/best-practices-for-app-engine-memcache" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Best Practices for App Engine Memcache</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/scaling/memcache" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Effective Memcache</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/sharding_counters" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Sharding Counters</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/modeling" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Modeling Entity Relationships</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/update_schema" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Updating Your Model's Schema</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/transaction_isolation" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Transaction Isolation</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/logging" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Using Cloud Logging in App Engine Apps</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/articles/deadlineexceedederrors" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Dealing with DeadlineExceededErrors</a></li>
+        </ul></li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable"><span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="0" aria-label="Support, click to expand/collapse" role="link">Support</span><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav" track-name="expandNavSectionArrow" track-metadata-position="0" aria-hidden="true"></a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item"><a href="https://code.google.com/p/googleappengine/issues/entry" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Submit Product Issue</a></li>
+         <li class="devsite-nav-item"><a href="https://support.google.com/cloud/#topic=3473162" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Contact Google Support</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/community" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Community Support</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/kb/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">App Engine FAQ</a></li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable"><span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="1" aria-label="Deprecation, click to expand/collapse" role="link">Deprecation</span><a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-type="leftNav" track-name="expandNavSectionArrow" track-metadata-position="1" aria-hidden="true"></a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Feature Deprecation</a></li>
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/endpoints-v1" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Endpoints Frameworks v1 Shutdown</a></li>
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/blobstore-ui" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Blobstore UI Shutdown</a></li>
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/datastore-admin-backups" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Datastore Admin Backups Shutdown</a></li>
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/django" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Django Packaged Libraries 1.2, 1.3 Support Shutdown</a></li>
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/python-ssl-27" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Python SSL Version 2.7 Shutdown</a></li>
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/python34" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Python 3.4 Runtime for Flexible Environment Shutdown</a></li>
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/java7" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Java 7 Runtime Shutdown</a></li>
+           <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/deprecations/vip" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="2" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Virtual IP (VIP) Transition to Server Name Indication (SNI)</a></li>
+          </ul></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/checklist" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Commercial Launch Checklist</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/appengine_services" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">App Engine Services Summary</a></li>
+         <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/docs/glossary" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="1" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Glossary</a></li>
+        </ul></li>
+       <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/sla" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Service Level Agreement</a></li>
+       <li class="devsite-nav-item"><a href="https://cloud.google.com/appengine/sla_error_rate" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">Service Level Agreement Error Rates</a></li>
+      </ul> 
+     </nav> 
+     <nav class="devsite-page-nav devsite-nav"></nav> 
+     <article class="devsite-article"> 
+      <article class="devsite-article-inner"> 
+       <div class="devsite-rating-container
+            ">
+        <div class="devsite-rating-stars">
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" data-category="Site-Wide Custom Events" data-label="Star Rating 1" track-metadata-score="1" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 1 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" data-category="Site-Wide Custom Events" data-label="Star Rating 2" track-metadata-score="2" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 2 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" data-category="Site-Wide Custom Events" data-label="Star Rating 3" track-metadata-score="3" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 3 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" data-category="Site-Wide Custom Events" data-label="Star Rating 4" track-metadata-score="4" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 4 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" data-category="Site-Wide Custom Events" data-label="Star Rating 5" track-metadata-score="5" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 5 out of 5"></div>
+        </div>
+        <div class="devsite-rating-description"></div>
+        <div class="devsite-rating-internal">
+         <span class="devsite-rating-stats"></span>
+        </div>
+        <div class="devsite-rating-feedback">
+         <button class="devsite-feedback-button gc-analytics-event button-white" data-category="Site-Wide Custom Events" data-label="Send Feedback" track-type="feedback" track-name="sendFeedbackLink" track-metadata-position="rating_widget"> Send feedback </button>
+        </div>
+       </div>
+       <script>
+  $(document).ready(function() {
+    devsite.ratings.init(
+      document.querySelectorAll('#devsite-feedback-project'), false
+      
+    );
+  });
+</script> 
+       <nav class="devsite-breadcrumb-nav devsite-nav"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item"> <a href="https://cloud.google.com/appengine/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1"> App Engine </a> </li> 
+         <li class="devsite-breadcrumb-item"> 
+          <div class="devsite-breadcrumb-guillemet material-icons"></div> <a href="https://cloud.google.com/appengine/docs/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2"> Documentation </a> </li> 
+         <li class="devsite-breadcrumb-item"> 
+          <div class="devsite-breadcrumb-guillemet material-icons"></div> <a href="https://cloud.google.com/docs/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3"> Documentation </a> </li> 
+        </ul> 
+       </nav> 
+       <h1 itemprop="name" class="devsite-page-title"> Java on Google App Engine </h1> 
+       <nav class="devsite-page-nav-embedded devsite-nav"></nav> 
+       <div class="devsite-article-body clearfix
+            " itemprop="articleBody"> 
+        <div class="docs-landing-page-main"> 
+         <section class="article"> 
+          <article id="cloud-site" class="grid-fluid l-fixed-width"> 
+           <section class="intro" style="padding-top: 20px;">
+             App Engine offers you a choice between two environments for Java applications: standard environment and flexible environment. Both environments have the same code-centric developer workflow, scale quickly and efficiently to handle increasing demand, and enable you to use Google’s proven serving technology to build your web, mobile, and IoT applications quickly and with minimal operational overhead. While the available environments have a lot in common, they differ in a few important ways. 
+           </section> 
+           <div> 
+            <h2>Choose your preferred environment</h2> 
+           </div> 
+           <div class="l-clearfix"> 
+            <div id="environments" class="l-clearfix flex"> 
+             <div class="c6 card l-pad-3"> 
+              <div class="inner-card"> 
+               <h3 class="hide-from-toc"> Standard environment </h3> 
+               <ul> 
+                <li> <p>Optimized to scale nearly instantaneously to handle huge traffic spikes.</p> </li> 
+                <li> <p>Most cost-effective for applications that have significant periods where they are not serving traffic.</p> </li> 
+                <li> <p>OpenJDK 8-based Java runtime supports the standard public Java library (no whitelist).</p> </li> 
+                <li> <p>Doesn't impose a security manager--your code won't be restricted by Java permissions issues.</p> </li> 
+                <li> <p><a href="https://cloud.google.com/appengine/docs/standard/java/runtime-java8">Java 8 runtime documentation</a></p> </li> 
+               </ul> 
+              </div> 
+              <div class="learn-more"> 
+               <a href="https://cloud.google.com/appengine/docs/standard/java/" track-type="docsLandingPage" track-name="standardDocs"> View Docs </a> 
+              </div> 
+             </div> 
+             <div class="c6 card l-pad-3"> 
+              <div class="inner-card"> 
+               <h3 class="hide-from-toc"> Flexible environment </h3> 
+               <ul> 
+                <li> <p>Full <a href="http://github.com/GoogleCloudPlatform/">open source</a> language runtimes.</p> </li> 
+                <li> <p>Use any framework, library, or binary of your choice.</p> </li> 
+                <li> <p>Code is portable to anywhere that supports Docker containers.</p> </li> 
+                <li> <p>Most cost-effective for applications that serve traffic continuously.</p> </li> 
+                <li> <p><a href="https://cloud.google.com/appengine/docs/flexible/java/dev-java-only">Java 8/9 runtime documentation</a></p> </li> 
+               </ul> 
+              </div> 
+              <div class="learn-more"> 
+               <a href="https://cloud.google.com/appengine/docs/flexible/java/" track-type="docsLandingPage" track-name="FlexibleDocs"> View Docs </a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="choosing" class="l-clearfix gray l-pad-7"> 
+            <div class="c3 flex-3 align-items-center first justify-right l-pad-5"> 
+             <h2>Choosing an environment</h2> 
+            </div> 
+            <div class="choosing-text c9 l-pad-5"> 
+             <div class="inner-text l-pad-bottom-5">
+               You can run an App Engine application in two environments, the standard environment and the flexible environment. See a summary of differences between the two environments. 
+             </div> 
+             <a href="https://cloud.google.com/appengine/docs/the-appengine-environments" class="button" track-type="docsLandingPage" track-name="choosingEnvironment"> Learn more </a> 
+            </div> 
+           </div> 
+          </article> 
+         </section> 
+        </div> 
+       </div> 
+       <div class="devsite-rating-container
+            devsite-rating-position-bottom">
+        <div class="devsite-rating-caption">
+          Was this page helpful? Let us know how we did: 
+        </div>
+        <div class="devsite-rating-stars">
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" data-category="Site-Wide Custom Events" data-label="Star Rating 1" track-metadata-score="1" track-type="feedback" track-name="rating" track-metadata-position="footer" role="button" aria-label="Site content star ratings, rating 1 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" data-category="Site-Wide Custom Events" data-label="Star Rating 2" track-metadata-score="2" track-type="feedback" track-name="rating" track-metadata-position="footer" role="button" aria-label="Site content star ratings, rating 2 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" data-category="Site-Wide Custom Events" data-label="Star Rating 3" track-metadata-score="3" track-type="feedback" track-name="rating" track-metadata-position="footer" role="button" aria-label="Site content star ratings, rating 3 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" data-category="Site-Wide Custom Events" data-label="Star Rating 4" track-metadata-score="4" track-type="feedback" track-name="rating" track-metadata-position="footer" role="button" aria-label="Site content star ratings, rating 4 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" data-category="Site-Wide Custom Events" data-label="Star Rating 5" track-metadata-score="5" track-type="feedback" track-name="rating" track-metadata-position="footer" role="button" aria-label="Site content star ratings, rating 5 out of 5"></div>
+        </div>
+        <div class="devsite-rating-description"></div>
+        <div class="devsite-rating-internal">
+         <span class="devsite-rating-stats"></span>
+        </div>
+        <div class="devsite-rating-feedback">
+         <button class="devsite-feedback-button gc-analytics-event button-white" data-category="Site-Wide Custom Events" data-label="Send Feedback" track-type="feedback" track-name="sendFeedbackLink" track-metadata-position="rating_widget"> Send feedback </button>
+        </div>
+       </div> 
+       <div class="devsite-content-footer nocontent"> 
+        <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="https://developers.google.com/terms/site-policies">Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p> 
+       </div> 
+      </article> 
+     </article> 
+    </div> 
+    <footer class="devsite-footer-linkboxes nocontent
+               devsite-footer-linkboxes-all-backup
+               ">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-linkboxes-list">
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-cloud"><h3 class="devsite-footer-linkbox-heading">Why Google</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/why-google-cloud/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Choosing Google Cloud" track-type="footer" track-name="whyGoogle" track-metadata-eventdetail="choosingGoogleCloud" track-metadata-position="footer"> Choosing Google Cloud </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/security/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Trust and security" track-type="footer" track-name="whyGoogle" track-metadata-eventdetail="trustAndSecurity" track-metadata-position="footer"> Trust and security </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/open-cloud/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Open cloud" track-type="footer" track-name="whyGoogle" track-metadata-eventdetail="openCloud" track-metadata-position="footer"> Open cloud </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/about/locations/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Data center locations" track-type="footer" track-name="whyGoogle" track-metadata-eventdetail="dataCenterLocations" track-metadata-position="footer"> Data center locations </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/customers/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Customers and case studies" track-type="footer" track-name="whyGoogle" track-metadata-eventdetail="customersAndCaseStudies" track-metadata-position="footer"> Customers and case studies </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/analyst-reports/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Analyst reports" track-type="footer" track-name="whyGoogle" track-metadata-eventdetail="analystReports" track-metadata-position="footer"> Analyst reports </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/whitepapers/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Whitepapers" track-type="footer" track-name="whyGoogle" track-metadata-eventdetail="whitepapers" track-metadata-position="footer"> Whitepapers </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox"> Products and pricing </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/pricing/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer GCP pricing" track-type="footer" track-name="productsAndPricing" track-metadata-eventdetail="gcpPricing" track-metadata-position="footer"> GCP pricing </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//gsuite.google.com/pricing.html" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer G Suite pricing" track-type="footer" track-name="productsAndPricing" track-metadata-eventdetail="gSuitePricing" track-metadata-position="footer"> G Suite pricing </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/maps-platform/pricing/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Maps Platform pricing" track-type="footer" track-name="productsAndPricing" track-metadata-eventdetail="mapsPlatformPricing" track-metadata-position="footer"> Maps Platform pricing </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/products/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer See all products" track-type="footer" track-name="productsAndPricing" track-metadata-eventdetail="seeAllProducts" track-metadata-position="footer"> See all products </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-cloud"><h3 class="devsite-footer-linkbox-heading">Solutions</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/ai/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Artificial intelligence" track-type="footer" track-name="solutions" track-metadata-eventdetail="artficialIntelligence" track-metadata-position="footer"> Artificial intelligence </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/big-data/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Big data analytics" track-type="footer" track-name="solutions" track-metadata-eventdetail="bigDataAnalytics" track-metadata-position="footer"> Big data analytics </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/#transform-how-teams-work" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Collaboration and productivity" track-type="footer" track-name="solutions" track-metadata-eventdetail="collaborationAndProductivity" track-metadata-position="footer"> Collaboration and productivity </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/continuous-delivery/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Continuous delivery" track-type="footer" track-name="solutions" track-metadata-eventdetail="continuousDelivery" track-metadata-position="footer"> Continuous delivery </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/migration-center/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Migrate workloads" track-type="footer" track-name="solutions" track-metadata-eventdetail="migrateWorkloads" track-metadata-position="footer"> Migrate workloads </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/mobile/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Mobile apps and sites" track-type="footer" track-name="solutions" track-metadata-eventdetail="mobileAppsAndSites" track-metadata-position="footer"> Mobile apps and sites </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/serverless/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Serverless computing" track-type="footer" track-name="solutions" track-metadata-eventdetail="serverlessComputing" track-metadata-position="footer"> Serverless computing </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/#industry-solutions" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Industry solutions" track-type="footer" track-name="solutions" track-metadata-eventdetail="industrySolutions" track-metadata-position="footer"> Industry solutions </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/#role-based-solutions-devops" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer DevOps solutions" track-type="footer" track-name="solutions" track-metadata-eventdetail="devopsSolutions" track-metadata-position="footer"> DevOps solutions </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/#role-based-solutions" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer HR and recruiting solutions" track-type="footer" track-name="solutions" track-metadata-eventdetail="hrAndRecruitingSolutions" track-metadata-position="footer"> HR and recruiting solutions </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/#role-based-solutions-marketing" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Marketing solutions" track-type="footer" track-name="solutions" track-metadata-eventdetail="marketingSolutions" track-metadata-position="footer"> Marketing solutions </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/#role-based-solutions-smb" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Small business solutions" track-type="footer" track-name="solutions" track-metadata-eventdetail="smallBusinessSolutions" track-metadata-position="footer"> Small business solutions </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/solutions/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer See all solutions" track-type="footer" track-name="solutions" track-metadata-eventdetail="seeAllSolutions" track-metadata-position="footer"> See all solutions </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-cloud"><h3 class="devsite-footer-linkbox-heading">Resources</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/docs/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer GCP documentation" track-type="footer" track-name="resources" track-metadata-eventdetail="gcpDocumentation" track-metadata-position="footer"> GCP documentation </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/gcp/getting-started/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer GCP quickstarts" track-type="footer" track-name="resources" track-metadata-eventdetail="gcpQuickstarts" track-metadata-position="footer"> GCP quickstarts </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/marketplace/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer GCP marketplace" track-type="footer" track-name="resources" track-metadata-eventdetail="gcpMarketplace" track-metadata-position="footer"> GCP Marketplace </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//gsuite.google.com/marketplace/?_ga=2.9626741.-1361126772.1534457455" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer G Suite marketplace" track-type="footer" track-name="resources" track-metadata-eventdetail="gSuiteMarketplace" track-metadata-position="footer"> G Suite Marketplace </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/support-hub/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Support" track-type="footer" track-name="resources" track-metadata-eventdetail="support" track-metadata-position="footer"> Support </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/docs/tutorials/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Tutorials" track-type="footer" track-name="resources" track-metadata-eventdetail="tutorials" track-metadata-position="footer"> Tutorials </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/training/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Training" track-type="footer" track-name="resources" track-metadata-eventdetail="training" track-metadata-position="footer"> Training </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/certifications/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Certifications" track-type="footer" track-name="resources" track-metadata-eventdetail="certifications" track-metadata-position="footer"> Certifications </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//developers.google.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Developers" track-type="footer" track-name="resources" track-metadata-eventdetail="googleDevelopers" track-metadata-position="footer"> Google Developers </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/developers/startups/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud for startups" track-type="footer" track-name="resources" track-metadata-eventdetail="googleCloudForStartups" track-metadata-position="footer"> Google Cloud for Startups </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//status.cloud.google.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer System status" track-type="footer" track-name="resources" track-metadata-eventdetail="systemStatus" track-metadata-position="footer"> System status </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-cloud"><h3 class="devsite-footer-linkbox-heading">Engage</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/contact/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Contact sales" track-type="contact" track-name="sales" track-metadata-eventdetail="footer" track-metadata-position="footer"> Contact sales </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//cloud.withgoogle.com/partners" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Find a Partner" track-type="footer" track-name="engage" track-metadata-eventdetail="findAPartner" track-metadata-position="footer"> Find a Partner </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/partners/become-a-partner" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Become a Partner" track-type="footer" track-name="engage" track-metadata-eventdetail="becomeAPartner" track-metadata-position="footer"> Become a Partner </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/blog/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Blog" track-type="footer" track-name="engage" track-metadata-eventdetail="blog" track-metadata-position="footer"> Blog </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//cloud.withgoogle.com/next18/sf" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Events" track-type="footer" track-name="engage" track-metadata-eventdetail="events" track-metadata-position="footer"> Events </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//www.gcppodcast.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Podcast" track-type="footer" track-name="engage" track-metadata-eventdetail="podcast" track-metadata-position="footer"> Podcast </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/community/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Community" track-type="footer" track-name="engage" track-metadata-eventdetail="community" track-metadata-position="footer"> Community </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://cloud.google.com/press/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Press center" track-type="footer" track-name="engage" track-metadata-eventdetail="press" track-metadata-position="footer"> Press center </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//www.youtube.com/googlecloud" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud on YouTube" track-type="footer" track-name="engage" track-metadata-eventdetail="googleCloudOnYouTube" track-metadata-position="footer"> Google Cloud on YouTube </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//www.youtube.com/googlecloudplatform" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer GCP on YouTube" track-type="footer" track-name="engage" track-metadata-eventdetail="gcpOnYouTube" track-metadata-position="footer"> GCP on YouTube </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//www.youtube.com/gsuite" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer G Suite on YouTube" track-type="footer" track-name="engage" track-metadata-eventdetail="gSuiteOnYouTube" track-metadata-position="footer"> G Suite on YouTube </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//twitter.com/googlecloud" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Follow on Twitter" track-type="footer" track-name="engage" track-metadata-eventdetail="followOnTwitter" track-metadata-position="footer"> Follow on Twitter </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//careers.google.com/cloud" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer We're hiring. Join Google Cloud!" track-type="footer" track-name="engage" track-metadata-eventdetail="we'reHiringJoiningGoogleCloud" track-metadata-position="footer"> We're hiring. Join Google Cloud! </a></li>
+        </ul></li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-utility-footer">
+     <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+      <div class="devsite-utility-footer-nav-left">
+       <span class="devsite-utility-footer-links"><a class="devsite-utility-footer-link gc-analytics-event" href="//www.google.com/about/" data-category="Site-Wide Custom Events" data-label="Footer about_google link" data-footer-link-id="about_google">About Google </a><a class="devsite-utility-footer-link gc-analytics-event" href="//policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer privacy link" data-footer-link-id="privacy">Privacy </a><a class="devsite-utility-footer-link gc-analytics-event" href="//www.google.com/intl/en/policies/terms/regional.html" data-category="Site-Wide Custom Events" data-label="Footer site_terms link" data-footer-link-id="site_terms">Site Terms </a><a class="devsite-utility-footer-link gc-analytics-event" href="https://cloud.google.com/product-terms/" data-category="Site-Wide Custom Events" data-label="Footer cloud_terms link" data-footer-link-id="cloud_terms">Google Cloud Terms </a></span>
+      </div>
+      <div class="devsite-utility-footer-nav-right">
+       <div class="devsite-utility-footer-newsletter-signup-text">
+         Sign up for the Google Cloud newsletter 
+       </div>
+       <a class="button button-primary devsite-utility-footer-newsletter-signup-button" href="/newsletter/" track-type="navigateTo" track-name="newsletter" track-metadata-eventdetail="footer" track-metadata-position="footer"> Subscribe </a>
+      </div>
+     </nav>
+    </footer>
+    <div class="devsite-feedback-dialog devsite-dialog">
+     <div class="devsite-dialog-contents">
+      <h3>Send feedback about...</h3>
+      <div class="devsite-feedback-item">
+       <a data-type="documentation" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Docs Feedback Image" track-type="feedback" track-name="feedbackDocIcon" track-metadata-position="header">
+        <div class="devsite-feedback-item-icon-container">
+         <div class="devsite-feedback-item-icon-white devsite-feedback-item-icon-docs
+                        material-icons"></div>
+        </div></a>
+       <div class="devsite-feedback-item-name">
+         This page 
+       </div>
+       <div class="devsite-feedback-item-description">
+        <a data-type="documentation" tabindex="0" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Docs Feedback Text" track-type="feedback" track-name="feedbackDocText" track-metadata-position="header"> Documentation feedback </a>
+       </div>
+      </div>
+      <div class="devsite-feedback-item">
+       <a data-type="product" tabindex="0" class="gc-analytics-event" data-category="Site-
