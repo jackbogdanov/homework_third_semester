@@ -3,18 +3,18 @@ import java.util.concurrent.*;
 
 public class WEB_crawler {
 
-    private Set<String> visited;
+    private MySynchronizedSet<String> visited;
     private ExecutorService threadPool;
 
-    private Set<Integer> currentTask;
+    private MySynchronizedSet<Integer> currentTask;
     private String startUrl;
     private int startDepth;
 
 
     public WEB_crawler(String URL, int depth, int maxThreads) {
-        visited = new ConcurrentSkipListSet<>();
+        visited = new MySynchronizedSet<>();
         threadPool = Executors.newFixedThreadPool(maxThreads);
-        currentTask = new ConcurrentSkipListSet<>();
+        currentTask = new MySynchronizedSet<>();
 
         startUrl = URL;
         startDepth = depth;

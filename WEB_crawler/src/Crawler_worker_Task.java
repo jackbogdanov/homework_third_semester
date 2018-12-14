@@ -37,7 +37,7 @@ public class Crawler_worker_Task implements Runnable {
             for (Element page : linksOnPage) {
                 String newURL = page.attr("abs:href");
                 if (depth > 0 && !mainCrawler.isVisited(newURL)) {
-                    System.out.println(URL);
+                    System.out.println("ADDED - " + URL);
                     mainCrawler.addNewTask(newURL, depth - 1);
                 }
 
