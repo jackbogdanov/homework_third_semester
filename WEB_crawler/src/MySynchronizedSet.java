@@ -1,8 +1,3 @@
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Queue;
-import java.util.Set;
-
 public class MySynchronizedSet<T> {
 
     private Node<T> head;
@@ -109,4 +104,16 @@ public class MySynchronizedSet<T> {
         return false;
     }
 
+
+    public T getFirst() {
+        T val = head.getValue();
+        synchronized (this) {
+            head = head.getNext();
+            if (head == null) {
+                tail = null;
+            }
+            size--;
+        }
+        return val;
+    }
 }

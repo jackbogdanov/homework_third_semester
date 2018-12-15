@@ -1,5 +1,7 @@
 import java.util.Set;
 import java.util.concurrent.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class WEB_crawler {
 
@@ -9,12 +11,15 @@ public class WEB_crawler {
     private MySynchronizedSet<Integer> currentTask;
     private String startUrl;
     private int startDepth;
+    private Lock lock;
 
 
     public WEB_crawler(String URL, int depth, int maxThreads) {
         visited = new MySynchronizedSet<>();
-        threadPool = Executors.newFixedThreadPool(maxThreads);
+        threadPool = new MyThreadPool(maxThreads);
         currentTask = new MySynchronizedSet<>();
+
+        lock = new ReentrantLock();
 
         startUrl = URL;
         startDepth = depth;
@@ -27,7 +32,7 @@ public class WEB_crawler {
 
     public void addNewTask(String URL, int depth) {
         int id = currentTask.size() + 1;
-        Runnable task = new Crawler_worker_Task(URL, this, depth, id);
+        Runnable task = new Crawler_worker_Task(URL, this, depth, id, lock);
         visited.add(URL);
 
         currentTask.add(id);
@@ -38,12 +43,10 @@ public class WEB_crawler {
         return visited.contains(URL);
     }
 
-    public void finishedTask(Integer id) {
+    public void onTaskFinished(Integer id) {
         currentTask.remove(id);
-        System.out.println("REMOVED - " + currentTask.isEmpty());
         if (currentTask.isEmpty()) {
             threadPool.shutdown();
-            System.out.println("OK");
         }
     }
 }
