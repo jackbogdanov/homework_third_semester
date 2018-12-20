@@ -36,14 +36,10 @@ public class Crawler_worker_Task implements Runnable {
 
             for (Element page : linksOnPage) {
                 String newURL = page.attr("abs:href");
-                try {
-                    lock.lock();
-                    if (depth > 0 && !mainCrawler.isVisited(newURL)) {
-                        mainCrawler.addNewTask(newURL, depth - 1);
-                    }
-                } finally {
-                    lock.unlock();
+                if (depth > 0) {
+                    mainCrawler.addNewTask(newURL, depth - 1);
                 }
+
             }
             saveToFile(document);
             mainCrawler.onTaskFinished(taskId);

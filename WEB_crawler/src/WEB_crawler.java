@@ -30,18 +30,17 @@ public class WEB_crawler {
     }
 
 
-    public void addNewTask(String URL, int depth) {
-        int id = currentTask.size() + 1;
-        Runnable task = new Crawler_worker_Task(URL, this, depth, id, lock);
-        visited.add(URL);
+    public synchronized void addNewTask(String URL, int depth) {
+        if (!visited.contains(URL)) {
+            int id = currentTask.size() + 1;
+            Runnable task = new Crawler_worker_Task(URL, this, depth, id, lock);
+            visited.add(URL);
 
-        currentTask.add(id);
-        threadPool.execute(task);
+            currentTask.add(id);
+            threadPool.execute(task);
+        }
     }
 
-    public boolean isVisited(String URL) {
-        return visited.contains(URL);
-    }
 
     public void onTaskFinished(Integer id) {
         currentTask.remove(id);
