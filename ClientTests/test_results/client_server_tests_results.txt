@@ -1,0 +1,23 @@
+Small parallel clients - 1 results: average time - 1417 median time - 1441
+Small parallel clients - 1 all results: [1365, 1441, 1446]
+Mid parallel clients - 1 results: average time - 7574 median time - 7573
+Mid parallel clients - 1 all results: [7567, 7573, 7584]
+Large parallel clients - 1 results: average time - 14322 median time - 14325
+Large parallel clients - 1 all results: [14285, 14325, 14357]
+
+Small parallel clients - 10 results: average time - 8377 median time - 8099
+Small parallel clients - 10 all results: [8070, 8099, 8963]
+Mid parallel clients - 10 results: average time - 47032 median time - 46573
+Mid parallel clients - 10 all results: [45238, 46573, 49285]
+Large parallel clients - 10 results: average time - 97574 median time - 97358
+Large parallel clients - 10 all results: [94715, 97358, 100651]
+
+Small parallel clients - 30 results: average time - 24714 median time - 26144
+Small parallel clients - 30 all results: [21830, 26144, 26168]
+Mid parallel clients - 30 results: average time - 143569 median time - 143365
+Mid parallel clients - 30 all results: [139477, 143365, 147866]
+Large parallel clients - 30 results: average time - 278546 median time - 275001
+Large parallel clients - 30 all results: [272447, 275001, 288191]
+
+
+failure on 40 clients!
