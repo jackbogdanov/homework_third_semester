@@ -3,9 +3,9 @@ package org.sample.program;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-public interface WEB_crawler {
+public interface WEB_crawler extends Runnable {
 
-    void startCrawl();
+    //void startCrawl();
 
     void addNewTask(String URL, int depth);
 

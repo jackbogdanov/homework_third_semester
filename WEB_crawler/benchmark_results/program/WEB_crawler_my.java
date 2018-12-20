@@ -1,7 +1,5 @@
 package org.sample.program;
 
-import java.util.Set;
-import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Lock;
@@ -9,28 +7,32 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class WEB_crawler_my implements WEB_crawler {
 
-    private Set<String> visited;
+    private MySynchronizedSet<String> visited;
     private ExecutorService threadPool;
 
-    private Set<Integer> currentTask;
+    private MySynchronizedSet<Integer> currentTask;
     private String startUrl;
     private int startDepth;
     private Lock lock;
 
+    private volatile boolean flag;
+
 
     public WEB_crawler_my(String URL, int depth, int maxThreads) {
-        visited = new ConcurrentSkipListSet<>();
-        threadPool = Executors.newFixedThreadPool(maxThreads);
+        visited = new MySynchronizedSet<>();
+        threadPool = new MyThreadPool(maxThreads);
 
-        currentTask = new ConcurrentSkipListSet<>();
+        currentTask = new MySynchronizedSet<>();
 
         lock = new ReentrantLock();
+
+        flag = true;
 
         startUrl = URL;
         startDepth = depth;
     }
 
-    public void startCrawl() {
+    private void startCrawl() {
         addNewTask(startUrl, startDepth);
     }
 
@@ -52,6 +54,17 @@ public class WEB_crawler_my implements WEB_crawler {
         currentTask.remove(id);
         if (currentTask.isEmpty()) {
             threadPool.shutdown();
+            flag = false;
+        }
+    }
+
+    @Override
+    public void run() {
+        startCrawl();
+        while (true) {
+            if (!flag) {
+                break;
+            }
         }
     }
 }

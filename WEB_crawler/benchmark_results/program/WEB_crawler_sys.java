@@ -1,27 +1,34 @@
 package org.sample.program;
 
+import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class WEB_crawler_sys implements WEB_crawler {
 
-    private MySynchronizedSet<String> visited;
+    private Set<String> visited;
     private ExecutorService threadPool;
 
-    private MySynchronizedSet<Integer> currentTask;
+    private Set<Integer> currentTask;
     private String startUrl;
     private int startDepth;
     private Lock lock;
 
+    private volatile boolean flag;
+
 
     public WEB_crawler_sys(String URL, int depth, int maxThreads) {
-        visited = new MySynchronizedSet<>();
-        threadPool = new MyThreadPool(maxThreads);
+        visited = new ConcurrentSkipListSet<>();
+        threadPool = Executors.newFixedThreadPool(maxThreads);
 
-        currentTask = new MySynchronizedSet<>();
+        currentTask = new ConcurrentSkipListSet<>();
 
         lock = new ReentrantLock();
+        flag = true;
 
         startUrl = URL;
         startDepth = depth;
@@ -49,6 +56,17 @@ public class WEB_crawler_sys implements WEB_crawler {
         currentTask.remove(id);
         if (currentTask.isEmpty()) {
             threadPool.shutdown();
+            flag = false;
+        }
+    }
+
+    @Override
+    public void run() {
+        startCrawl();
+        while (true) {
+            if (!flag) {
+                break;
+            }
         }
     }
 }

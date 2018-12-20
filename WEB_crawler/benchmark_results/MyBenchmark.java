@@ -38,12 +38,13 @@ import org.sample.program.*;
 import java.util.concurrent.TimeUnit;
 
 @State(Scope.Thread)
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(TimeUnit.SECONDS)
+@BenchmarkMode(Mode.SingleShotTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class MyBenchmark {
 
     @State(Scope.Thread)
     public static class State1 {
+
         @Param({"systemCollection", "myCollection"})
         private String mode;
 
@@ -54,18 +55,20 @@ public class MyBenchmark {
         private int depth;
 
         private final String URL = "http://www.mkyong.com/";
-        public WEB_crawler crawler;
+        public Thread crawler;
 
         @Setup(Level.Invocation)
         public void prepare() {
-           switch (mode) {
-               case "systemCollection":
-                   crawler = new WEB_crawler_sys(URL, depth, threadsCount);
-                   break;
-               default:
-                   crawler = new WEB_crawler_my(URL, depth, threadsCount);
-                   break;
-           }
+
+            switch (mode) {
+                case "myCollection":
+                    crawler = new Thread(new WEB_crawler_my(URL, depth, threadsCount));
+                    break;
+                default:
+                    crawler = new Thread(new WEB_crawler_sys(URL, depth, threadsCount));
+                    break;
+            }
+
         }
         
     }
@@ -73,9 +76,16 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 1)
     @Fork(1)
-    @Measurement(iterations = 3)
-    public void parallelSumTest(State1 st) {
-        st.crawler.startCrawl();
+    @Measurement(iterations = 2)
+    public void test(State1 st) {
+
+        st.crawler.start();
+        try {
+            st.crawler.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
