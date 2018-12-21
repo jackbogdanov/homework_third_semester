@@ -51,7 +51,8 @@ public class Client implements Runnable {
 
     private void sendFile() {
 
-        if (isStopped) {
+        if (isStopped || filterName.equals("")) {
+            isStopped = true;
             return;
         }
 
@@ -124,4 +125,6 @@ public class Client implements Runnable {
         } catch (IOException e) {
         }
     }
+
+
 }

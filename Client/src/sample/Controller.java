@@ -46,11 +46,17 @@ public class Controller {
     void onLoadButtonClick(ActionEvent event) {
         loadImage(loadingEditText.getText());
     }
+
     @FXML
     void onStartButtonClick(ActionEvent event) {
         System.out.println("start!");
         duringClient= new Client(file, filterName, this);
         new Thread(duringClient).start();
+    }
+
+    @FXML
+    void OnSplitMenuClick(ActionEvent event) {
+        getFilters();
     }
 
     @FXML

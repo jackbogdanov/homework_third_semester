@@ -1,7 +1,5 @@
 import filters.IFilter;
-import org.w3c.dom.css.RGBColor;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.Socket;

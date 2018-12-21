@@ -1,5 +1,6 @@
 import filters.BlurFilter;
 import filters.IFilter;
+import filters.RemoveBlueFilter;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -21,11 +22,11 @@ public class Server {
             serverSocket = new ServerSocket(PORT);
             filters = new ArrayList<>();
             filters.add(new BlurFilter());
+            filters.add(new RemoveBlueFilter());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
     public void startServe() {
         while (true) {

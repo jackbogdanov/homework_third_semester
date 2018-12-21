@@ -18,7 +18,7 @@
       <Button fx:id="stopButton" layoutX="138.0" layoutY="480.0" mnemonicParsing="false" onAction="#OnStopButtonClick" text="stop" />
       <ButtonBar layoutX="234.0" layoutY="473.0" prefHeight="40.0" prefWidth="200.0">
          <buttons>
-            <SplitMenuButton fx:id="filter_menu" mnemonicParsing="false" text="SplitMenuButton" />
+            <SplitMenuButton fx:id="filter_menu" mnemonicParsing="false" onAction="#OnSplitMenuClick" text="SplitMenuButton" />
          </buttons>
       </ButtonBar>
       <HBox alignment="CENTER" layoutX="58.0" layoutY="34.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">

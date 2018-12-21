@@ -25,7 +25,7 @@ public class BlurFilter extends BaseFilter{
                     color = new Color(image.getRGB(i, j));
                     r += color.getRed();
                     g += color.getGreen();
-                   // b += color.getBlue();
+                    b += color.getBlue();
                 } else {
                     r += originPixColor.getRed();
                     g += originPixColor.getGreen();
