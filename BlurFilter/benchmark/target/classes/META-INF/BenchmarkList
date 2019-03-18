@@ -1,0 +1,1 @@
+JMH S 22 org.sample.MyBenchmark S 51 org.sample.generated.MyBenchmark_testMethod_jmhTest S 10 testMethod S 11 AverageTime E A 1 1 1 E I 1 1 E E I 1 2 E E I 1 1 E E E E E M 2 4 mode 2 10 HORIZONTAL 8 VERTICAL 12 threadsCount 4 1 1 1 2 1 4 1 8 U 7 SECONDS E E 
