@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <meta name="google-site-verification" content="VsVvSTVAouAluNodWeR30BeIWTr4c84HvN4Fn9WBsak"> 
+  <!-- wp_head --> 
+  <title>Maven – PMD example – Mkyong.com</title> 
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"> 
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> 
+  <link rel="stylesheet" id="wpdiscuz-font-awesome-css" href="http://www.mkyong.com/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.0.6/css/fontawesome-all.min.css?ver=5.2.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wpdiscuz-frontend-css-css" href="http://www.mkyong.com/wp-content/plugins/wpdiscuz/assets/css/wpdiscuz.css?ver=5.2.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wpdiscuz-user-content-css-css" href="http://www.mkyong.com/wp-content/plugins/wpdiscuz/assets/css/wpdiscuz-user-content.css?ver=5.2.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="bootstrap4-cdn-css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css?ver=4.0.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="prism-css-css" href="http://www.mkyong.com/wp-content/themes/mkyong-bs4/assets/prism/prism.css?ver=20180316" type="text/css" media="all"> 
+  <link rel="stylesheet" id="mkyong-bs4-style-css" href="http://www.mkyong.com/wp-content/themes/mkyong-bs4/style.css?ver=20180316" type="text/css" media="all"> 
+  <script type="text/javascript" src="http://www.mkyong.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="http://www.mkyong.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="http://www.mkyong.com/wp-content/plugins/wpdiscuz/assets/third-party/wpdcookiejs/customcookie.js?ver=5.2.2"></script> 
+  <script type="text/javascript" src="http://www.mkyong.com/wp-content/plugins/wpdiscuz/assets/third-party/autogrow/jquery.autogrowtextarea.min.js?ver=5.2.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzAjaxObj = {"url":"http:\/\/www.mkyong.com\/wp-admin\/admin-ajax.php","customAjaxUrl":"http:\/\/www.mkyong.com\/wp-content\/plugins\/wpdiscuz\/utils\/ajax\/wpdiscuz-ajax.php","wpdiscuz_options":{"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"View Replies","wc_msg_required_fields":"Please fill out required fields","wc_invalid_field":"Some of field value is invalid","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_held_for_moderate":"Comment awaiting moderation","wc_comment_edit_not_possible":"Sorry, this comment no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_new_comment_button_text":"new comment","wc_new_comments_button_text":"new comments","wc_new_reply_button_text":"new reply on your comment","wc_new_replies_button_text":"new replies on your comments","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","wc_follow_user":"Follow this user","wc_unfollow_user":"Unfollow this user","wc_follow_success":"You started following this comment author","wc_follow_canceled":"You stopped following this comment author.","wc_follow_email_confirm":"Please check your email and confirm the user following request.","wc_follow_email_confirm_fail":"Sorry, we couldn't send confirmation email.","wc_follow_login_to_follow":"Please login to follow users.","wc_follow_impossible":"We are sorry, but you can't follow this user.","wc_follow_not_added":"Following failed. Please try again later.","is_user_logged_in":false,"commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"30","liveUpdateGuests":"1","wc_comment_bg_color":"#FEFEFE","wc_reply_bg_color":"#F8F8F8","wpdiscuzCommentsOrder":"desc","wpdiscuzCommentOrderBy":"by_vote","commentsVoteOrder":true,"wordpressThreadCommentsDepth":"5","wordpressIsPaginate":"","commentTextMaxLength":null,"storeCommenterData":100000,"isCaptchaInSession":true,"isGoodbyeCaptchaActive":false,"socialLoginAgreementCheckbox":0,"enableFbLogin":0,"enableFbShare":0,"facebookAppID":"","facebookUseOAuth2":0,"enableGoogleLogin":0,"googleAppID":"","cookiehash":"47e29c9f28a4a9715706d68112ecd907","isLoadOnlyParentComments":0,"ahk":"","enableDropAnimation":0,"isNativeAjaxEnabled":1,"cookieCommentsSorting":"wpdiscuz_comments_sorting","version":"5.2.2","wc_post_id":14815,"loadLastCommentId":0,"lastVisitKey":"wordpress_last_visit","lastVisitExpires":1546814182,"lastVisitCookie":{"1":{"14815":1544222182}},"isCookiesEnabled":true,"wc_captcha_show_for_guest":"0","wc_captcha_show_for_members":"0","is_email_field_required":1}};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.mkyong.com/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz.js?ver=5.2.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzUCObj = {"msgConfirmDeleteComment":"Are you sure you want to delete this comment?","msgConfirmCancelSubscription":"Are you sure you want to cancel this subscription?","msgConfirmCancelFollow":"Are you sure you want to cancel this follow?"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.mkyong.com/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz-user-content.js?ver=5.2.2"></script> 
+  <script type="text/javascript" src="http://www.mkyong.com/wp-content/plugins/wpdiscuz/assets/third-party/lity/lity.js?ver=5.2.2"></script> 
+  <link rel="prev" title="Maven – SpotBugs example" href="http://www.mkyong.com/maven/maven-spotbugs-example/"> 
+  <link rel="next" title="Maven – How to force re-download project dependencies?" href="http://www.mkyong.com/maven/maven-how-to-force-re-download-project-dependencies/"> 
+  <link rel="canonical" href="http://www.mkyong.com/maven/maven-pmd-example/"> 
+  <style>
+                #wpcomm .wc_new_comment{background:#00B38F;}
+                #wpcomm .wc_new_reply{background:#00B38F;}
+                #wpcomm .wc-form-wrapper{ background:none; } /* ->formBGColor */
+                #wpcomm .wpdiscuz-front-actions{background:#F9F9F9;}
+                #wpcomm .wpdiscuz-subscribe-bar{background:#F9F9F9;}
+                #wpcomm select,
+                #wpcomm input[type="text"],
+                #wpcomm input[type="email"],
+                #wpcomm input[type="url"],
+                #wpcomm input[type="date"],
+                #wpcomm input[type="color"]{border:#D9D9D9 1px solid;}
+                #wpcomm .wc-comment .wc-comment-right{background:#FEFEFE;}
+                #wpcomm .wc-reply .wc-comment-right{background:#F8F8F8;}
+                #wpcomm .wc-comment-right .wc-comment-text, 
+                #wpcomm .wc-comment-right .wc-comment-text *{
+                    font-size:14px;
+                }
+                #wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-administrator > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-editor > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-author > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-contributor > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-subscriber > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-post_author > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author a{color:#888888;}#wpcomm .wc-blog-guest > .wc-comment-left .wc-comment-label{color:#888888; border:none; border-bottom: 1px solid #dddddd; }                #wpcomm .wc-comment .wc-comment-left .wc-comment-label{ background: #ffffff;}
+                #wpcomm .wc-comment-left .wc-follow-user{color:#00B38F;}
+                #wpcomm .wc-load-more-submit{border:1px solid #D9D9D9;}
+                #wpcomm .wc-new-loaded-comment > .wc-comment-right{background:#FFFAD6;}
+                #wpcomm .wpdiscuz-subscribe-bar{color:#777;}
+                #wpcomm .wpdiscuz-front-actions .wpdiscuz-sbs-wrap span{color: #777;}
+                #wpcomm .page-numbers{color:#555;border:#555 1px solid;}
+                #wpcomm span.current{background:#555;}
+                #wpcomm .wpdiscuz-readmore{cursor:pointer;color:#00B38F;}
+                #wpcomm .wpdiscuz-textarea-wrap{border:#D9D9D9 1px solid;} .wpd-custom-field .wcf-pasiv-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label {color: #DDDDDD;}
+                #wpcomm .wpdiscuz-item .wpdiscuz-rating:not(:checked) > label:hover,.wpdiscuz-rating:not(:checked) > label:hover ~ label {   }#wpcomm .wpdiscuz-item .wpdiscuz-rating > input ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label{color: #FFED85;} 
+                #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label:hover ~ input:checked ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked + label:hover ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover ~ label, .wpd-custom-field .wcf-activ-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label{ color:#FFD700;}
+                #wpcomm .wc-comment-header{border-top: 1px solid #dedede;}
+                #wpcomm .wc-reply .wc-comment-header{border-top: 1px solid #dedede;}
+                /* Buttons */
+                #wpcomm button, 
+                #wpcomm input[type="button"], 
+                #wpcomm input[type="reset"], 
+                #wpcomm input[type="submit"]{ border: 1px solid ; color: ; background-color: ; }
+                #wpcomm button:hover, 
+                #wpcomm button:focus,
+                #wpcomm input[type="button"]:hover, 
+                #wpcomm input[type="button"]:focus, 
+                #wpcomm input[type="reset"]:hover, 
+                #wpcomm input[type="reset"]:focus, 
+                #wpcomm input[type="submit"]:hover, 
+                #wpcomm input[type="submit"]:focus{ border: 1px solid #333333; background-color: #333333;  }
+                #wpcomm .wpdiscuz-sort-buttons{color:#777777;}
+                #wpcomm .wpdiscuz-sort-button{color:; cursor:pointer;}
+                #wpcomm .wpdiscuz-sort-button:hover{color:#00B38F!important;cursor:pointer;}
+                #wpcomm .wpdiscuz-sort-button-active{color:#00B38F!important;cursor:default!important;}
+                #wpcomm .wc-cta-button, 
+                #wpcomm .wc-cta-button-x{color:; }
+                #wpcomm .wc-vote-link.wc-up{color:;}
+                #wpcomm .wc-vote-link.wc-down{color:;}
+                #wpcomm .wc-vote-result{color:#999999;}
+                #wpcomm .wpf-cta{color:#999999; }
+                #wpcomm .wc-comment-link .wc-share-link .wpf-cta{color:#eeeeee;}
+                #wpcomm .wc-footer-left .wc-reply-button{border:1px solid #00B38F!important; color: #00B38F;}
+                #wpcomm .wpf-cta:hover{background:#00B38F!important; color:#FFFFFF;}
+                #wpcomm .wc-footer-left .wc-reply-button.wc-cta-active, #wpcomm .wc-cta-active{background:#00B38F!important; color:#FFFFFF;}
+                #wpcomm .wc-cta-button:hover{background:#00B38F!important; color:#FFFFFF;}
+                #wpcomm .wc-footer-right .wc-toggle,
+                #wpcomm .wc-footer-right .wc-toggle a,
+                #wpcomm .wc-footer-right .wc-toggle i{color:#00B38F;}
+                /* STICKY COMMENT HEADER */
+                #wpcomm .wc-sticky-comment.wc-comment .wc-comment-header{}
+                #wpcomm .wc-sticky-comment.wc-comment .wc-comment-header .wpd-sticky{background: #1ecea8; color: #ffffff; }
+                #wpcomm .wc-closed-comment.wc-comment .wc-comment-header{}
+                #wpcomm .wc-closed-comment.wc-comment .wc-comment-header .wpd-closed{background: #aaaaaa; color: #ffffff;}
+                /* PRIVATE COMMENT HEADER */
+                #wpcomm .wc-private-comment.wc-comment .wc-comment-header{}
+                #wpcomm .wc-private-comment.wc-comment .wc-comment-header .wpd-private{background: #999999; color: #ffffff;}
+                /* FOLLOW LINK */
+
+                #wpcomm .wc-follow{color:;}
+                #wpcomm .wc-follow-active{color:#ff7a00;}
+                #wpcomm .wc-follow:hover i,
+                #wpcomm .wc-unfollow:hover i,
+                #wpcomm .wc-follow-active:hover i{color:#00B38F;}
+                                .wpd-wrapper .wpd-list-item.wpd-active{border-top: 3px solid #00B38F;}
+                                .comments-area{width:auto;}
+            </style> 
+  <!-- ./wp_head --> 
+  <!-- Google Auto Ads --> 
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <script>
+					 (adsbygoogle = window.adsbygoogle || []).push({
+						  google_ad_client: "ca-pub-2836379775501347",
+						  enable_page_level_ads: true
+					 });
+				</script> 
+ </head> 
+ <body> 
+  <header class="navbar navbar-expand-lg navbar-dark fixed-top bg-blue"> 
+   <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Mkyong.com"> <img src="http://www.mkyong.com/wp-content/themes/mkyong-bs4/images/logo.png" width="180px" height="32px" alt="Mkyong.com Logo"> </a> 
+   <!-- Toggler/collapsibe Button --> 
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+   <!-- Navbar links --> 
+   <div class="collapse navbar-collapse" id="navbarCollapse"> 
+    <div class="dropdown-divider"></div> 
+    <ul class="navbar-nav mr-auto"> 
+     <li class="nav-item"> <a class="nav-link" title="All Tutorials" href="/all-tutorials-on-mkyong-com/">All Tutorials</a> </li> 
+     <li class="nav-item"> <a class="nav-link" title="Java 8" href="/tutorials/java-8-tutorials/">Java 8</a> </li> 
+     <li class="nav-item"> <a class="nav-link" title="Spring Boot" href="/tutorials/spring-boot-tutorials/">Spring Boot</a> </li> 
+     <li class="nav-item"> <a class="nav-link" title="Contact" href="/contact-mkyong/">Contact</a> </li> 
+    </ul> 
+    <form class="form-inline" role="search" method="get" action="//www.mkyong.com/search/"> 
+     <input type="hidden" name="cx" value="partner-pub-2836379775501347:3714346998"> 
+     <input type="hidden" name="cof" value="FORID:10"> 
+     <input type="hidden" name="ie" value="UTF-8"> 
+     <input id="searchBox" name="q" class="form-control mr-sm-2" type="search" placeholder="Search for..." maxlength="50" aria-label="Search"> 
+     <button id="searchButton" class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button> 
+    </form> 
+   </div> 
+  </header> 
+  <div class="container"> 
+   <div class="row"> 
+    <div class="col-xl"> 
+     <div class="row"> 
+      <div class="col"> 
+       <div class="center ads-box ads-box-top-responsive"> 
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+        <!-- mkyong-top-responsive --> 
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2836379775501347" data-ad-slot="5333521399" data-ad-format="auto" data-ad-region="mkyongregion"></ins> 
+        <script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div id="main" class="col-xl"> 
+       <!-- google_ad_section_start(name=mkyongregion) --> 
+       <article id="post-14815"> 
+        <h1>Maven – PMD example</h1> 
+        <div class="post-meta"> 
+         <div class="post-meta">
+          By 
+          <a href="http://www.mkyong.com/author/mkyong/" title="mkyong class=" author" rel="author">mkyong</a> | 
+          <time datetime="2018-11-20T16:41:02+00:00">November 20, 2018</time> | Viewed : 551 | 
+          <span>+390 pv/w</span>
+         </div> 
+        </div> 
+        <div id="post-content"> 
+         <div class="pic"> 
+          <img src="http://www.mkyong.com/wp-content/uploads/2018/11/pmd-logo.png"> 
+         </div> 
+         <p>In this article, we will show you how to use <a href="https://maven.apache.org/plugins/maven-pmd-plugin/" target="_blank">Maven PMD Plugin</a> to analyze the Java code.</p> 
+         <p><em>P.S PMD requires Java 1.7</em></p> 
+         <h2>1. Maven PMD Plugin</h2> 
+         <p>Define the <code>maven-pmd-plugin</code> in the <code>reporting</code> tag, so that <code>mvn site</code> will generate the PMD report.</p> 
+         <div class="filename">
+          pom.xml
+         </div> 
+         <pre><code class="language-markup">
+	&lt;reporting&gt;
+        &lt;plugins&gt;
+      
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-pmd-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.11.0&lt;/version&gt;
+            &lt;/plugin&gt;
+
+        &lt;/plugins&gt;
+    &lt;/reporting&gt;
+</code></pre> 
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+         <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-format="fluid" data-ad-layout="in-article" data-ad-client="ca-pub-2836379775501347" data-ad-slot="6894224149"></ins> 
+         <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+         <h2>2. Java Code</h2> 
+         <p>A simple Java code. We will use Maven PMD plugin to analyze this code and display the issues in a report.</p> 
+         <pre><code class="language-java">
+package com.mkyong.examples;
+
+public class StaticCodeExample {
+
+    //Unused field
+    private int abc;
+
+    private String ip = "127.0.0.1";
+
+    public void test() {
+
+        String[] field = {"a", "b", "c", "s", "e"};
+
+        String s = "";
+        for (int i = 0; i &lt; field.length; ++i) {
+            s = s + field[i];
+        }
+
+        System.out.println(ip);
+
+    }
+
+}
+</code></pre> 
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2836379775501347" data-ad-slot="8821506761" data-ad-format="auto" data-ad-region="mkyongregion"></ins> 
+         <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+         <h2>3. Maven Site</h2> 
+         <p><code>mvn compile site</code> to generate a Maven site for the Java project, the PMD report will be generated and integrated into the Maven site automatically. </p> 
+         <pre><code class="language-bash">
+$ mvn compile site
+
+[INFO] Generating "PMD" report           --- maven-pmd-plugin:3.11.0:pmd
+[INFO] Generating "Dependency Information" report --- maven-project-info-reports-plugin:3.0.0:dependency-info
+[INFO] Generating "About" report         --- maven-project-info-reports-plugin:3.0.0:index
+[INFO] Generating "Plugin Management" report --- maven-project-info-reports-plugin:3.0.0:plugin-management
+[INFO] Generating "Plugins" report       --- maven-project-info-reports-plugin:3.0.0:plugins
+[INFO] Generating "Summary" report       --- maven-project-info-reports-plugin:3.0.0:summary
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.732 s
+[INFO] Finished at: 2018-11-19T15:38:56+08:00
+[INFO] ------------------------------------------------------------------------
+</code></pre> 
+         <h2>4. PMD Report</h2> 
+         <p>Review the report at <code>target/site/pmd.html</code></p> 
+         <div class="pic"> 
+          <a href="http://www.mkyong.com/wp-content/uploads/2018/11/maven-pmd-static-code.png"><img src="http://www.mkyong.com/wp-content/uploads/2018/11/maven-pmd-static-code.png"></a> 
+         </div> 
+         <h2>5. FAQs</h2> 
+         <p>5.1 Review all <a href="https://pmd.github.io/pmd-6.9.0/pmd_rules_java.html" target="_blank">PMD built-in rules for Java here</a>.</p> 
+         <h2>Download Source Code</h2> 
+         <div class="github" < div> 
+          <p>$ git clone <a href="https://github.com/mkyong/maven-examples.git" target="_blank">https://github.com/mkyong/maven-examples.git</a><br> $ cd maven-static-code-analysis<br> $ mvn compile site</p> 
+          <p># view report at target/site/pmd.html </p>
+         </div> 
+         <h2>References</h2> 
+         <ol> 
+          <li><a href="https://pmd.github.io/" target="_blank">PMD official site</a></li> 
+          <li><a href="https://maven.apache.org/plugins/maven-pmd-plugin/" target="_blank">Maven PMD Plugin</a></li> 
+          <li><a href="https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java" target="_blank">List of tools for static code analysis</a></li> 
+         </ol> 
+         <div class="row"> 
+          <div class="col"> 
+           <div class="post-tag">
+            <a href="http://www.mkyong.com/tag/maven/" rel="tag">maven</a> 
+            <a href="http://www.mkyong.com/tag/pmd/" rel="tag">pmd</a> 
+            <a href="http://www.mkyong.com/tag/static-code-analysis/" rel="tag">static code analysis</a>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- /.post-content --> 
+        <div class="ads-box"> 
+         <!--Carambola Script --> 
+         <img height="0" width="0" alt="" src="//pixel.watch/eey7" style="display:block;"> 
+         <script data-cfasync="false" class="carambola_InContent" type="text/javascript" cbola_wid="0">  
+			(function (i,d,s,o,m,r,c,l,w,q,y,h,g) {  
+			var e=d.getElementById(r);if(e===null){  
+			var t = d.createElement(o); t.src = g; t.id = r; t.setAttribute(m, s);t.async = 1;var n=d.getElementsByTagName(o)[0];n.parentNode.insertBefore(t, n); 
+			var dt=new Date().getTime();  
+			try{i[l][w+y](h,i[l][q+y](h)+'&'+dt);}catch(er){i[h]=dt;}  
+			} else if(typeof i[c]!=='undefined'){i[c]++}  
+			else{i[c]=1;}  
+			})(window, document, 'InContent', 'script', 'mediaType', 'carambola_proxy','Cbola_IC','localStorage','set','get','Item','cbolaDt','//route.carambo.la/inimage/getlayer?pid=myky82&did=112239&wid=0')  
+		</script> 
+        </div> 
+        <input type="hidden" id="mkyong-postId" value="14815"> 
+        <h4>About the Author</h4> 
+        <div id="author-info" class="media rounded"> 
+         <img alt="author image" src="http://0.gravatar.com/avatar/622c70d2908e68ecc070ca6754245bb2?s=96&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/622c70d2908e68ecc070ca6754245bb2?s=192&amp;d=mm&amp;r=g 2x" class="avatar avatar-96 photo d-flex mr-3 rounded-circle" height="96" width="96"> 
+         <div class="media-body"> 
+          <h5 class="mt-0">mkyong</h5> Founder of 
+          <a href="http://mkyong.com" rel="nofollow">Mkyong.com</a>, love Java and open source stuff. Follow him on 
+          <a href="https://twitter.com/mkyong">Twitter</a>, or befriend him on 
+          <a href="http://www.facebook.com/java.tutorial">Facebook</a> or 
+          <a href="https://plus.google.com/110948163568945735692?rel=author">Google Plus</a>. If you like my tutorials, consider make a donation to 
+          <a href="http://www.mkyong.com/blog/donate-to-charity/">these charities</a>. 
+         </div> 
+        </div> 
+        <!-- Google recommend --> 
+        <div class="ads-box"> 
+         <!-- google recommend --> 
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+         <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-2836379775501347" data-ad-slot="3110889791"></ins> 
+         <script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script> 
+        </div> 
+        <!--
+	<div class="d-none d-md-block">
+		<div id="mk-related-post"></div>
+		<div id="mk-popular-post"></div>
+	</div>
+	--> 
+        <h4>Comments</h4> 
+        <div id="comment"> 
+         <div class="wpdiscuz_top_clearing"></div> 
+         <div id="comments" class="comments-area"> 
+          <div id="respond" style="width: 0;height: 0;clear: both;margin: 0;padding: 0;"></div> 
+          <div id="wpcomm" class="wpdiscuz_unauth wpd-default"> 
+           <div class="wpdiscuz-form-top-bar"> 
+            <div class="wpdiscuz-ftb-left"> 
+             <div id="wc_show_hide_loggedin_username"> 
+             </div> 
+            </div> 
+            <div class="wpd-clear"></div> 
+           </div> 
+           <div class="wc_social_plugin_wrapper"> 
+           </div> 
+           <div class="wc-form-wrapper wc-main-form-wrapper" id="wc-main-form-wrapper-0_0"> 
+            <div class="wpdiscuz-comment-message" style="display: block;"></div> 
+            <form class="wc_comm_form wc_main_comm_form" method="post" enctype="multipart/form-data"> 
+             <div class="wc-field-comment"> 
+              <div class="wpdiscuz-item wc-field-textarea"> 
+               <div class="wpdiscuz-textarea-wrap "> 
+                <div class="wc-field-avatararea"> 
+                 <img alt="avatar" src="http://2.gravatar.com/avatar/?s=40&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo avatar-default" height="40" width="40"> 
+                </div> 
+                <textarea id="wc-textarea-0_0" placeholder="Join the discussion..." required name="wc_comment" class="wc_comment wpd-field"></textarea> 
+               </div> 
+              </div> 
+              <div class="clearfix"></div> 
+             </div> 
+             <div class="wc-form-footer" style="display: none;"> 
+              <div class="wpd-form-row"> 
+               <div class="wpd-form-col-left"> 
+                <div class="wpdiscuz-item wpd-has-icon"> 
+                 <div class="wpd-field-icon">
+                  <i class="fas fa-user"></i>
+                 </div> 
+                 <input value="" required class="wc_name wpd-field" type="text" name="wc_name" placeholder="Name*" maxlength="50" pattern=".{3,50}" title=""> 
+                </div> 
+                <div class="wpdiscuz-item wpd-has-icon"> 
+                 <div class="wpd-field-icon">
+                  <i class="fas fa-at"></i>
+                 </div> 
+                 <input value="" required class="wc_email wpd-field" type="email" name="wc_email" placeholder="Email*"> 
+                </div> 
+               </div> 
+               <div class="wpd-form-col-right"> 
+                <div class="wc-field-submit"> 
+                 <label class="wpd_label" title="Notify of new replies to this comment"> <input id="wc_notification_new_comment-0_0" class="wc_notification_new_comment-0_0 wpd_label__checkbox" value="comment" type="checkbox" name="wpdiscuz_notification_type"> <span class="wpd_label__text"> <span class="wpd_label__check"> <i class="fas fa-bell wpdicon wpdicon-on"></i> <i class="fas fa-bell-slash wpdicon wpdicon-off"></i> </span> </span> </label> 
+                 <input class="wc_comm_submit wc_not_clicked button alt" type="submit" name="submit" value="Post Comment"> 
+                </div> 
+               </div> 
+               <div class="clearfix"></div> 
+              </div> 
+             </div> 
+             <div class="clearfix"></div> 
+             <input type="hidden" class="wpdiscuz_unique_id" value="0_0" name="wpdiscuz_unique_id"> 
+            </form> 
+            <div class="wpdiscuz-form-bottom-bar"> 
+             <div class="wpdiscuz-fbb-left"> 
+              <div class="wpdiscuz-stat wpd-stat-threads wpd-tooltip-left"> 
+               <i class="fas fa-align-left fa-rotate-180" data-fa-transform="rotate-180"></i>
+               <span class="wpd-stat-threads-count">1</span> 
+               <wpdtip>
+                Comment threads
+               </wpdtip> 
+              </div> 
+              <div class="wpdiscuz-stat wpd-stat-replies wpd-tooltip-left"> 
+               <i class="far fa-comments"></i>
+               <span class="wpd-stat-replies-count">0</span> 
+               <wpdtip>
+                Thread replies
+               </wpdtip> 
+              </div> 
+              <div class="wpdiscuz-stat wpd-stat-subscribers wpd-tooltip-left"> 
+               <i class="fas fa-rss"></i>
+               <span>0</span> 
+               <wpdtip>
+                Followers
+               </wpdtip> 
+              </div>&nbsp; 
+              <div class="wpdiscuz-stat wpd-stat-reacted wpd-tooltip"> 
+               <i class="fas fa-bolt"></i> 
+               <wpdtip>
+                Most reacted comment
+               </wpdtip> 
+              </div> 
+              <div class="wpdiscuz-stat wpd-stat-hot wpd-tooltip"> 
+               <i class="fab fa-hotjar"></i> 
+               <wpdtip>
+                Hottest comment thread
+               </wpdtip> 
+              </div> 
+             </div> 
+             <div class="wpdiscuz-fbb-right"> 
+              <div class="wpdiscuz-stat wpd-stat-users wpd-tooltip"> 
+               <i class="fas fa-user-circle"></i> 
+               <span class="wpd-stat-authors-count">1</span> 
+               <wpdtip>
+                Comment authors
+               </wpdtip> 
+              </div> 
+              <div class="wpdiscuz-users wpd-tooltip-right"> 
+               <img alt="Fernando Franzini" src="http://0.gravatar.com/avatar/97c682e2eb6addb07842452b4db3726d?s=64&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/97c682e2eb6addb07842452b4db3726d?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo" height="64" width="64" title="Fernando Franzini"> 
+               <wpdtip>
+                Recent comment authors
+               </wpdtip> 
+              </div> 
+             </div> 
+             <div class="wpd-clear"></div> 
+            </div> 
+           </div> 
+           <div id="wpdiscuz_hidden_secondary_form" style="display: none;"> 
+            <div class="wc-form-wrapper wc-secondary-form-wrapper" id="wc-secondary-form-wrapper-wpdiscuzuniqueid" style="display: none;"> 
+             <div class="wpdiscuz-comment-message" style="display: block;"></div> 
+             <div class="wc-secondary-forms-social-content"></div>
+             <div class="clearfix"></div> 
+             <form class="wc_comm_form wc-secondary-form-wrapper" method="post" enctype="multipart/form-data"> 
+              <div class="wc-field-comment"> 
+               <div class="wpdiscuz-item wc-field-textarea"> 
+                <div class="wpdiscuz-textarea-wrap "> 
+                 <div class="wc-field-avatararea"> 
+                  <img alt="avatar" src="http://2.gravatar.com/avatar/?s=48&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo avatar-default" height="48" width="48"> 
+                 </div> 
+                 <textarea id="wc-textarea-wpdiscuzuniqueid" placeholder="Join the discussion..." required name="wc_comment" class="wc_comment wpd-field"></textarea> 
+                </div> 
+               </div> 
+               <div class="clearfix"></div> 
+              </div> 
+              <div class="wc-form-footer" style="display: none;"> 
+               <div class="wpd-form-row"> 
+                <div class="wpd-form-col-left"> 
+                 <div class="wpdiscuz-item wpd-has-icon"> 
+                  <div class="wpd-field-icon">
+                   <i class="fas fa-user"></i>
+                  </div> 
+                  <input value="" required class="wc_name wpd-field" type="text" name="wc_name" placeholder="Name*" maxlength="50" pattern=".{3,50}" title=""> 
+                 </div> 
+                 <div class="wpdiscuz-item wpd-has-icon"> 
+                  <div class="wpd-field-icon">
+                   <i class="fas fa-at"></i>
+                  </div> 
+                  <input value="" required class="wc_email wpd-field" type="email" name="wc_email" placeholder="Email*"> 
+                 </div> 
+                </div> 
+                <div class="wpd-form-col-right"> 
+                 <div class="wc-field-submit"> 
+                  <label class="wpd_label" title="Notify of new replies to this comment"> <input id="wc_notification_new_comment-wpdiscuzuniqueid" class="wc_notification_new_comment-wpdiscuzuniqueid wpd_label__checkbox" value="comment" type="checkbox" name="wpdiscuz_notification_type"> <span class="wpd_label__text"> <span class="wpd_label__check"> <i class="fas fa-bell wpdicon wpdicon-on"></i> <i class="fas fa-bell-slash wpdicon wpdicon-off"></i> </span> </span> </label> 
+                  <input class="wc_comm_submit wc_not_clicked button alt" type="submit" name="submit" value="Post Comment"> 
+                 </div> 
+                </div> 
+                <div class="clearfix"></div> 
+               </div> 
+              </div> 
+              <div class="clearfix"></div> 
+              <input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid" name="wpdiscuz_unique_id"> 
+             </form> 
+            </div> 
+           </div> 
+           <div class="wpdiscuz-front-actions"> 
+            <div class="wpdiscuz-sort-buttons" style="font-size:14px; color: #777;"> 
+             <i class="fas fa-caret-up" aria-hidden="true"></i> 
+             <span class="wpdiscuz-sort-button wpdiscuz-date-sort-desc ">newest</span> 
+             <i class="fas fa-caret-up" aria-hidden="true"></i> 
+             <span class="wpdiscuz-sort-button wpdiscuz-date-sort-asc ">oldest</span> 
+             <i class="fas fa-caret-up" aria-hidden="true"></i> 
+             <span class="wpdiscuz-sort-button wpdiscuz-vote-sort-up wpdiscuz-sort-button-active">most voted</span> 
+            </div> 
+            <div class="clearfix"></div> 
+           </div> 
+           <div id="wcThreadWrapper" class="wc-thread-wrapper"> 
+            <div id="wc-comm-1057101_0" class="wc-comment wc-blog-guest wc_comment_level-1">
+             <div class="wc-comment-left ">
+              <div class="wpd-xborder"></div>
+              <img alt="Fernando Franzini" src="http://0.gravatar.com/avatar/97c682e2eb6addb07842452b4db3726d?s=64&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/97c682e2eb6addb07842452b4db3726d?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo" height="64" width="64">
+              <div class="wc-blog-guest wc-comment-label">
+               <span>Guest</span>
+              </div>
+             </div>
+             <div id="comment-1057101" class="wc-comment-right ">
+              <div class="wc-comment-header">
+               <div class="wc-comment-author ">
+                Fernando Franzini
+               </div>
+               <div class="wc-comment-link"></div>
+               <div class="wpdiscuz_clear"></div>
+              </div>
+              <div class="wc-comment-text">
+               <p>tried to do with Groovy? Do you know if it works?</p> 
+              </div>
+              <div class="wc-comment-footer">
+               <div class="wc-footer-left">
+                <span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span>
+                <span class="wc-vote-result">0</span>
+                <span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;
+                <span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span>
+               </div>
+               <div class="wc-footer-right">
+                <div class="wc-comment-date">
+                 <i class="far fa-clock" aria-hidden="true"></i>16 days ago
+                </div>
+                <div class="wc-toggle"></div>
+               </div>
+               <div class="wpdiscuz_clear"></div>
+              </div>
+             </div>
+             <div class="wpdiscuz-comment-message"></div>
+             <div id="wpdiscuz_form_anchor-1057101_0" style="clear:both"></div>
+            </div> 
+            <div class="wpdiscuz-comment-pagination"> 
+            </div> 
+           </div> 
+           <div class="wpdiscuz_clear"></div> 
+          </div> 
+         </div> 
+         <div id="wpdiscuz-loading-bar" class="wpdiscuz-loading-bar wpdiscuz-loading-bar-unauth"></div> 
+        </div> 
+        <!-- /#comment --> 
+       </article> 
+       <!-- /.article --> 
+       <!-- google_ad_section_end --> 
+      </div> 
+      <!-- only display in xl(>=1200px)--> 
+      <div class="col-xl-3 big-screen-ads" id="sidebar-right"> 
+       <div class="sidebar-box center"> 
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2836379775501347" data-ad-slot="7072877400" data-ad-region="mkyongregion"></ins> 
+        <script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+       </div> 
+       <div class="sidebar-box center"> 
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2836379775501347" data-ad-slot="5738517670" data-ad-region="mkyongregion"></ins> 
+        <script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+       </div> 
+       <div class="sidebar-box center"> 
+        <div data-type="ad" data-publisher="lqm.j2ee.site" data-zone="ron" data-format="300x250" data-tags="Java%2cSpring%2cAndroid%2cMobile%2cjQuery%2cUnit%20Test%2cASP.NET%20MVC%2cDI%2cTDD"></div> 
+       </div> 
+       <div class="sidebar-box center"> 
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+        <!-- mkyong-sidebar-300x600 --> 
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2836379775501347" data-ad-slot="7953295395" data-ad-region="mkyongregion"></ins> 
+        <script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+       </div> 
+       <div class="sidebar-box center"> 
+        <div data-type="ad" data-publisher="lqm.j2ee.site" data-zone="ron" data-format="160x600" data-tags="Java%2cSpring%2cAndroid%2cMobile%2cjQuery%2cUnit%20Test%2cASP.NET%20MVC%2cDI%2cTDD"></div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!--/.row --> 
+  </div> 
+  <!--/.container --> 
+  <div class="container-fluid"> 
+   <div class="row"> 
+    <div class="ads-box center d-none d-xl-block"> 
+     <div data-type="ad" data-publisher="lqm.j2ee.site" data-zone="ron" data-format="728x90" data-tags="Java%2cSpring%2cAndroid%2cMobile%2cjQuery%2cUnit%20Test%2cASP.NET%20MVC%2cDI%2cTDD"></div> 
+    </div> 
+    <footer> 
+     <div id="footer-link" class="d-none d-md-block"> 
+      <div class="container"> 
+       <div class="row"> 
+        <div class="col-4"> 
+         <h4>Favorites Links</h4> 
+         <div class="menu-fav-links-container">
+          <ul id="menu-fav-links" class="menu">
+           <li id="menu-item-13669" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13669"><a href="http://developer.android.com/training/index.html">Android Getting Started</a></li> 
+           <li id="menu-item-13670" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13670"><a href="https://cloud.google.com/appengine/docs/java/">Google App Engine – Java</a></li> 
+           <li id="menu-item-13671" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13671"><a href="http://docs.spring.io/spring/docs/2.5.x/reference/index.html">Spring 2.5.x Documentation</a></li> 
+           <li id="menu-item-13672" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13672"><a href="http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/">Spring 3.2.x Documentation</a></li> 
+           <li id="menu-item-13673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13673"><a href="http://docs.spring.io/spring/docs/4.1.x/spring-framework-reference/html/">Spring 4.1.x Documentation</a></li> 
+           <li id="menu-item-13675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13675"><a href="http://docs.oracle.com/javaee/5/tutorial/doc/docinfo.html">Java EE 5 Tutorial</a></li> 
+           <li id="menu-item-13676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13676"><a href="http://docs.oracle.com/javaee/6/tutorial/doc/docinfo.html">Java EE 6 Tutorial</a></li> 
+           <li id="menu-item-13677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13677"><a href="https://docs.oracle.com/javaee/7/tutorial/index.html">Java EE 7 Tutorial</a></li> 
+           <li id="menu-item-13678" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13678"><a href="http://docs.oracle.com/javase/6/docs/api/overview-summary.html">Java 6 API</a></li> 
+           <li id="menu-item-13679" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13679"><a href="http://docs.oracle.com/javase/7/docs/api/overview-summary.html">Java 7 API</a></li> 
+           <li id="menu-item-13680" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13680"><a href="http://docs.oracle.com/javase/8/docs/api/overview-summary.html">Java 8 API</a></li> 
+           <li id="menu-item-14082" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14082"><a href="http://docs.oracle.com/javase/tutorial/index.html">Oracle J2SE Tutorials</a></li> 
+           <li id="menu-item-13681" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13681"><a href="https://javaserverfaces.java.net/">JSF Home Page</a></li> 
+           <li id="menu-item-13682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13682"><a href="https://jsp.java.net/">JSP Home Page</a></li> 
+           <li id="menu-item-13674" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13674"><a href="http://search.maven.org/">Maven Central Repository</a></li> 
+           <li id="menu-item-14083" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14083"><a href="https://docs.gradle.org/current/userguide/userguide.html">Gradle User Guide</a></li> 
+           <li id="menu-item-13683" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13683"><a href="http://hibernate.org/orm/">Hibernate ORM</a></li> 
+           <li id="menu-item-13684" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13684"><a href="https://jax-ws.java.net/">JAX-WS Home Page</a></li> 
+           <li id="menu-item-13685" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13685"><a href="https://jax-ws.java.net/">JAX-RS Home Page (Jersey)</a></li> 
+           <li id="menu-item-14084" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14084"><a href="http://tomcat.apache.org/tomcat-8.0-doc/index.html">Tomcat 8 Documentation</a></li> 
+          </ul>
+         </div> 
+        </div> 
+        <div class="col-4"> 
+         <h4>Partners &amp; Bookmarks</h4> 
+         <div class="menu-partners-container">
+          <ul id="menu-partners" class="menu">
+           <li id="menu-item-13686" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13686"><a title="JAX London" href="https://jaxlondon.com/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=mediapartner">JAX London</a></li> 
+           <li id="menu-item-13664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13664"><a href="http://www.javacodegeeks.com/">Java Code Geeks</a></li> 
+          </ul>
+         </div> 
+        </div> 
+        <div class="col-4"> 
+         <h4>About Mkyong.com</h4> 
+         <p>Mkyong.com is for Java and J2EE developers, all examples are simple and easy to understand, and well tested in my development environment. </p> 
+         <p> Mkyong.com is created, written by, and maintained by Yong Mook Kim, aka Mkyong. It is built on <a href="https://wordpress.org/" target="_blank">WordPress</a>, hosted by <a href="http://mkyong.com/go/liquidweb/" target="_blank">Liquid Web</a>, and the caches are served by CloudFlare CDN. </p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- /#footer-link --> 
+     <div id="footer-copyright"> 
+      <div class="container"> 
+       <div class="row"> 
+        <div class="col">
+          Copyright © 2008-2018 Mkyong.com, all rights reserved. 
+         <a href="/privacy-policy/">Privacy Policy</a> 
+        </div> 
+       </div> 
+       <script type="text/javascript">
+/* <![CDATA[ */
+r3f5x9JS=escape(document['referrer']);
+hf4N='a7ddbb6819698a96d6185ec99371d1b8';
+hf4V='745e2f28b9ebc4b6a846a2165279ddb6';
+cm4S="form[action='http://www.mkyong.com/wp-comments-post.php']";
+jQuery(document).ready(function($){var e="#commentform, .comment-respond form, .comment-form, "+cm4S+", #lostpasswordform, #registerform, #loginform, #login_form, #wpss_contact_form";$(e).submit(function(){$("<input>").attr("type","hidden").attr("name","r3f5x9JS").attr("value",r3f5x9JS).appendTo(e);return true;});var h="form[method='post']";$(h).submit(function(){$("<input>").attr("type","hidden").attr("name",hf4N).attr("value",hf4V).appendTo(h);return true;});});
+/* ]]> */
+</script> 
+       <a id="wpdUserContentInfoAnchor" style="display:none;" rel="#wpdUserContentInfo" data-wpd-lity>wpDiscuz</a>
+       <div id="wpdUserContentInfo" style="overflow:auto;background:#FDFDF6;padding:20px;width:600px;max-width:100%;border-radius:6px;" class="lity-hide"></div>
+       <script type="text/javascript" src="http://www.mkyong.com/wp-includes/js/jquery/jquery.form.min.js?ver=4.2.1"></script> 
+       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js?ver=3.2.1.slim"></script> 
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js?ver=1.12.9"></script> 
+       <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js?ver=4.0.0"></script> 
+       <script type="text/javascript" src="http://www.mkyong.com/wp-content/themes/mkyong-bs4/assets/prism/prism.js?ver=20180316"></script> 
+       <script type="text/javascript" src="http://www.mkyong.com/wp-content/plugins/wp-spamshield/js/jscripts-ftr2-min.js"></script> 
+      </div> 
+     </div> 
+     <!-- /#footer-copyright --> 
+     <!-- Google Analytics --> 
+     <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-752408-5', 'auto');
+		  ga('send', 'pageview');
+		</script> 
+     <!-- Developer Media --> 
+     <script type="text/javascript">
+			function _dmBootstrap(file) { 
+				var _dma = document.createElement('script');  
+				_dma.type = 'text/javascript'; 
+				_dma.asy
